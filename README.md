@@ -1,7 +1,8 @@
+**LATIHAN 1**
 Eksperimen 1
-NotificationService hashCode di OrderService:  1828559444
-NotificationService hashCode di UserService: 1828559444
-Apakah hashCode nya SAMA? 1828559444 --> hashcodenya sama
+NotificationService hashCode di OrderService:  411876574
+NotificationService hashCode di UserService: 411876574
+Apakah hashCode nya SAMA? 411876574 --> hashcodenya sama
 
 Eksperimen 2
 Apakah berhasil start? [tidak]
@@ -36,3 +37,19 @@ BUILD FAILED in 3s
 setelah dijalankan ulang
 Apakah berhasil start? [ya]
 Error message: -
+
+pertanyaan refleksi
+1. dengan adanya @SpringBootApplication, spring akan dengan otomatis mengatur konfigurasi dasar, mencari class yang diberi anotasi (@Service, @Controller) lalu menghubungkan objek-objek tersebut tanpa harus menulis kodenya sendiri
+2. dengan menggunakan NotificationService bisa membuat kita jadi lebih fleksible, karena nanti tidak akan terikat pada satu jenis implementasi saja (seperti Email). sehingga nanti kalau mau ganti metodenya ke SMS atau ke metode yang lainnya kita tidak perlu mengganti banyak, hanya mengubah sebagian kodenya saja
+3. tidak perlu, karena spring mempunya sistem Dependency Injection yang otomatis membuat dan  menghubungkan object sesuai kebutuhan
+4. spring tidak kan mengenalinya dan program bisa error
+
+
+**LATIHAN 2**
+pertanyaan refleksi
+1. dengan file properties kita bisa mengubah konfigurasi tanpa menyentuh kode rogram, sehingga lebih praktis dan aman
+2. denga profile kita tidak perlu mengubah konfigurasi secara manual setiap pindah enviroment, sehingga mengurangi risiko kesalahan seperti salah koneksi ke database production saat masih tahap testing
+3. logging.level.root=INFO --> seluruh aplikasi default hanya menampilkan log info level INFO ke atas
+   logging.level.com.example=DEBUG --> hanya berlaku untuk package tersebut, sehingga di dalam package itu log DEBUG juga akan tampil
+4. karena itu menghasilkan terlalu banyak informasi detail yang tidak selalu diperlukan
+5. application-dev.properties, karena spring boot memuat file properties utama terlebih dahulu lalu override nilainya dengan file profile yang sedang aktif
